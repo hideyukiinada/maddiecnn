@@ -32,6 +32,10 @@ Notes
 -----
     1. Requirements to run this script.
         I am using virtualenv with Python 3.5.
+    2. To view training on Tensorboard
+       Invoke tensorboard by:
+           tensorboard --logdir=<specify the directory is set to TENSORBOARD_LOG_DIR>
+       Navigate to http://0.0.0.0:6006 in your browser.
 
 To Do's
 -------
@@ -125,10 +129,12 @@ from keras.layers import Dropout
 from keras.layers import Flatten
 from keras.layers import Conv2D
 from keras.layers import MaxPooling2D
+from keras.callbacks import TensorBoard
 
 # Configurable parameters
 DATASET_DIR = "../../dataset/256"
 WEIGHT_FILE = "../../weight/maddiecnn.h5"
+TENSORBOARD_LOG_DIR = "../../log"
 
 MAX_NUM_FILES_TO_LOAD = -1  # Set to -1 for load all image files
 IMAGE_WIDTH = 256
@@ -284,7 +290,9 @@ def cnn():
               batch_size=BATCH_SIZE,
               epochs=NUM_EPOCHS,
               verbose=1,
-              validation_data=(x_test, y_test))
+              validation_data=(x_test, y_test),
+              callbacks=[TensorBoard(log_dir=TENSORBOARD_LOG_DIR)]
+              )
     score = model.evaluate(x_test, y_test, verbose=0)
     print('Test loss:', score[0])
     print('Test accuracy:', score[1])

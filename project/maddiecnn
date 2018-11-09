@@ -38,16 +38,15 @@ To Do's
     This file is still being updated.
     To-do items are:
     1. Test the accuracy flag.
-    2. Save the model weight.
-    3. Change the Keras model to functional API.
+    2. Change the Keras model to functional API.
 
 Accuracy
 --------
     Accuracy is to be verified.  Tentative unconfirmed accuracy (from Keras API output) is the following for a dataset
     of 2655 images in the training dataset:
 
-    Training set accuracy: 0.8908
-    Test accuracy: 0.7891566272241524
+    Training set accuracy: 0.8934
+    Test accuracy: 0.8162650595228356
 
     Epochs was set to 400
 
@@ -129,6 +128,8 @@ from keras.layers import MaxPooling2D
 
 # Configurable parameters
 DATASET_DIR = "../../dataset/256"
+WEIGHT_FILE = "../../weight/maddiecnn.h5"
+
 MAX_NUM_FILES_TO_LOAD = -1  # Set to -1 for load all image files
 IMAGE_WIDTH = 256
 IMAGE_HEIGHT = IMAGE_WIDTH
@@ -251,20 +252,20 @@ def cnn():
     input_shape = (IMAGE_HEIGHT, IMAGE_WIDTH, IMAGE_CHANNELS)
 
     model = Sequential()
-    model.add(Conv2D(8, kernel_size=(7, 7), activation='relu',
+    model.add(Conv2D(8, kernel_size=(7, 7), padding='same', activation='relu',
                      input_shape=input_shape))
     model.add(MaxPooling2D(pool_size=(2, 2)))  # To 128x128
 
-    model.add(Conv2D(16, kernel_size=(5, 5), activation='relu'))
+    model.add(Conv2D(16, kernel_size=(5, 5), padding='same', activation='relu'))
     model.add(MaxPooling2D(pool_size=(2, 2)))  # To 64x64
 
-    model.add(Conv2D(32, kernel_size=(3, 3), activation='relu'))
+    model.add(Conv2D(32, kernel_size=(3, 3), padding='same', activation='relu'))
     model.add(MaxPooling2D(pool_size=(2, 2)))  # To 32x32
 
-    model.add(Conv2D(64, kernel_size=(3, 3), activation='relu'))
+    model.add(Conv2D(64, kernel_size=(3, 3), padding='same', activation='relu'))
     model.add(MaxPooling2D(pool_size=(2, 2)))  # To 16x16
 
-    model.add(Conv2D(128, kernel_size=(3, 3), activation='relu'))
+    model.add(Conv2D(128, kernel_size=(3, 3), padding='same', activation='relu'))
     model.add(MaxPooling2D(pool_size=(2, 2)))  # To 8x8
 
     model.add(Dropout(0.25))
@@ -288,6 +289,13 @@ def cnn():
     print('Test loss:', score[0])
     print('Test accuracy:', score[1])
 
+    # Save weight
+    weight_path = Path(WEIGHT_FILE)
+    if weight_path.parent.exists() is False:
+        log.info("Not found weight directory %s. Creating." % (weight_path.parent))
+        weight_path.parent.mkdir()
+
+    model.save_weights(WEIGHT_FILE)
 
 def main():
     cnn()

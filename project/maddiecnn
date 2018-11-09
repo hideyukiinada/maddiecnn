@@ -41,20 +41,7 @@ To Do's
 -------
     This file is still being updated.
     To-do items are:
-    1. Test the accuracy flag.
-    2. Change the Keras model to functional API.
-
-Accuracy
---------
-    Accuracy is to be verified.  Tentative unconfirmed accuracy (from Keras API output) is the following for a dataset
-    of 2655 images in the training dataset:
-
-    Training set accuracy: 0.8934
-    Test accuracy: 0.8162650595228356
-
-    Epochs was set to 400
-
-    Accuracy number may go down upon verification via inspection of classification result so this is just for reference.
+    1. Change the Keras model to functional API.
 
 __author__ = "Hide Inada"
 __copyright__ = "Copyright 2018, Hide Inada"
@@ -283,8 +270,7 @@ def cnn():
 
     model.compile(loss=keras.losses.binary_crossentropy,
                   optimizer=keras.optimizers.Adadelta(),
-                  # metrics=['accuracy'])
-                  metrics=['categorical_accuracy'])  # TODOS: I am still testing if this is a valid flag
+                  metrics=['accuracy'])
 
     model.fit(x_train, y_train,
               batch_size=BATCH_SIZE,

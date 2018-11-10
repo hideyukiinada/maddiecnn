@@ -59,7 +59,7 @@ def cnn_predict():
         if DogClassMarker.PINK in classes:
             actual = actual + DogClassMarker.PINK
         if len(actual) == 0:
-            predicted = "_"
+            actual = "_"
 
         # Prediction
         # Convert the predicted classes contained in the vector to a string.

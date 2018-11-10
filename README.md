@@ -46,3 +46,6 @@ Upon data load, classes get converted to a following vector to store ground trut
 |1|0 or 1.0|
 |2|0 or 1.0|
 |3|0 or 1.0|
+
+## Training and Predicting
+To train the model, run maddiecnn.  To predict, run maddiecnn_predict.

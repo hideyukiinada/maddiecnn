@@ -27,10 +27,11 @@ If one or more dogs are in the photo, each file is marked with one or more of th
 
 | Prefix | Description
 |---|---|
+| a | Aimée |
 | m | Maddie |
 | o | Olivia |
 | p | Pink |
-| a | Aimée |
+
   
 If a photo does not contain any of the dogs above, the file name will be _<5 digit zero-padded number>.jpg.
 

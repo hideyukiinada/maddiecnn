@@ -2,6 +2,9 @@
 ## Goals
 Identify my 4 dogs using convolutional neural network (CNN) from 3000+ photos using Keras-based convolutional neural network.
 
+## Network design
+Network is defined in cnn.py using Keras' Sequential model.  It uses multiple conv layers as well as dense layers toward the end.
+
 ## Dataset
 Dataset consists of 3319 images.  3253 images contain one or more of the 4 dogs below.  The remaining 66 images do not contain any image of dogs. 
 

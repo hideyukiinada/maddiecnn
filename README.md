@@ -3,6 +3,7 @@
 Identify my 4 dogs using convolutional neural network (CNN) from 3000+ photos using Keras-based convolutional neural network.
 
 ## Dataset
+Dataset consists of 3319 256 pixelx256 pixel images.  3253 images contain one or more of the 4 dogs below.  The remaining 66 images do not contain any image of dogs. 
 
 |  Name | Sample photo from the dataset  |
 |---|---|

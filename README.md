@@ -1,6 +1,8 @@
 # maddiecnn
-# Goals
-Identify my 4 dogs using convolutional neural network (CNN) from 3000+ photos using Keras-based convolutional neural network:
+## Goals
+Identify my 4 dogs using convolutional neural network (CNN) from 3000+ photos using Keras-based convolutional neural network.
+
+## Dataset
 
 |  Name | Sample photo from the dataset  |
 |---|---|

@@ -16,7 +16,7 @@ Dataset consists of 3319 images.  3253 images contain one or more of the 4 dogs 
 256 pixel by 256 pixel JPEG.
 
 ## Classification criteria
-For each dog, if I can say with confidence that a dog is in the photo even if a part of the body or face is missing, the dog is considered present in the photo and marked as such.
+For each dog, if I can say with confidence that a dog is in the photo even if a part of the body or face is missing, then the dog is considered present in the photo and marked as such.
 
 ## Image file name convention 
 Files are named using the following convention:

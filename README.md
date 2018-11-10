@@ -1,7 +1,7 @@
 # maddiecnn
 Identify my 4 dogs using convolutional neural network (CNN) from 3000+ photos using Keras-based convolutional neural network:
 
-|   |   |
+|  Name | Photo  |
 |---|---|
 | Aimee | ![Image of Aimee](assets/images/a_02059.jpg_256x256.jpg) |
 | Maddie | ![Image of Maddie](assets/images/m_01409.jpg_256x256.jpg) |

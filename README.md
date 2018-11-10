@@ -16,12 +16,13 @@ Dataset consists of 3319 images.  3253 images contain one or more of the 4 dogs 
 256 pixel by 256 pixel JPEG.
 
 ## Classification criteria
-Criteria for the presence of the dog
-For each dog, if one of the eyes and at least a part of the tip of the nose are in the photo, the dog is considered present in the photo and marked as such.
+For each dog, if I can say with confidence that a dog is in the photo even if a part of the body or face is missing, the dog is considered present in the photo and marked as such.
 
-## How each photo in the dataset is marked
+## Image file name convention 
+Files are named using the following convention:
+<Name prefixes>_<5 digit zero-padded number>.jpg
 
-<Name prefixes>_<5 digit zero-padded number>.png
+If one or more dogs are in the photo, each file is marked with one or more of the following prefixes: 
 
 | Prefix | Description
 |---|---|
@@ -29,7 +30,7 @@ For each dog, if one of the eyes and at least a part of the tip of the nose are 
 | o | Olivia |
 | p | Pink |
 | a | Aimée |
-
+  
 If the photo does not contain any of the dogs above, the file name will be _<5 digit zero-padded number>.png.
 
 Upon data load, this will be converted to a following vector:

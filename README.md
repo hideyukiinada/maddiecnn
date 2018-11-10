@@ -1,5 +1,7 @@
 # Maddie CNN
+
 ## Current status of this project
+
 Coding is complete and the latest version of the code is available in this repo.  Accuracy against the test set as measured using maddiecnn_predict script is high.  I will go through the dataset one more time before publishing the dataset and also run one more round of training and prediction before updating this page with the final accuracy information. 
 ---
 ## Goals

@@ -5,4 +5,4 @@ Identify my 4 dogs using convolutional neural network (CNN) from 3000+ photos us
 - Olivia
 - Pink
 
-![Image of Aimee](blob/master/assets/images/a_02059.jpg_256x256.jpg)
+![Image of Aimee](assets/images/a_02059.jpg_256x256.jpg)

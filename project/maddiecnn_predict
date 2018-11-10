@@ -1,0 +1,103 @@
+#!/usr/bin/env python
+'''Predict if one or more of my 4 dogs are in the photos using the weight saved in training.
+
+__author__ = "Hide Inada"
+__copyright__ = "Copyright 2018, Hide Inada"
+__license__ = "The MIT license"
+__email__ = "hideyuki@gmail.com"
+'''
+import os
+import sys
+import logging
+from pathlib import Path
+
+from project.config import load_config
+from project.dataload import load_image_data
+from project.cnn import cnn
+from project.maddiecnncommon import DogClassIndex
+from project.maddiecnncommon import DogClassMarker
+
+log = logging.getLogger(__name__)
+logging.basicConfig(level=os.environ.get("LOGLEVEL", "DEBUG"))
+config = load_config()
+
+
+def cnn_predict():
+    """Predict the class or classes of dogs contain in the dataset using the weight file created in the training session."""
+
+    x_train, y_train, x_test, y_test, file_name_training_list, file_name_test_list = load_image_data()
+
+    model = cnn()
+
+    weight_path = Path(config["weight_file"])
+    if weight_path.exists() is False:
+        log.error("Not found weight file %s. Aborting." % (weight_path))
+        sys.exit(1)
+
+    model.load_weights(weight_path)
+
+    y_predicted = model.predict(x_test)
+    correct_count = 0
+    total_count = x_test.shape[0]
+    for i in range(total_count):
+        # Ground truth
+        # Convert the file name to a string that contains only the ground trugh classes
+        name = file_name_test_list[i]
+        underscore_pos = name.find("_")
+        if underscore_pos < 0:
+            log.warning("Invalid image file name. Missing classification marker for file %s" % (name))
+            continue
+
+        classes = name[0:underscore_pos]
+        actual = ""
+        if DogClassMarker.AIMEE in classes:
+            actual = actual + DogClassMarker.AIMEE
+        if DogClassMarker.MADDIE in classes:
+            actual = actual + DogClassMarker.MADDIE
+        if DogClassMarker.OLIVIA in classes:
+            actual = actual + DogClassMarker.OLIVIA
+        if DogClassMarker.PINK in classes:
+            actual = actual + DogClassMarker.PINK
+        if len(actual) == 0:
+            predicted = "_"
+
+        # Prediction
+        # Convert the predicted classes contained in the vector to a string.
+        # Before conversion, round down or round up values to 0 or 1 except for the mid-range number.
+        # A mid-range number is counted as a "mismatch".
+        v = y_predicted[i]
+
+        low_threshold_flag = v < 0.3
+        v[low_threshold_flag] = 0
+
+        high_threshold_flag = v > 0.7
+        v[high_threshold_flag] = 1
+
+        predicted = ""
+        if v[DogClassIndex.AIMEE] == 1:
+            predicted = predicted + DogClassMarker.AIMEE
+        if v[DogClassIndex.MADDIE] == 1:
+            predicted = predicted + DogClassMarker.MADDIE
+        if v[DogClassIndex.OLIVIA] == 1:
+            predicted = predicted + DogClassMarker.OLIVIA
+        if v[DogClassIndex.PINK] == 1:
+            predicted = predicted + DogClassMarker.PINK
+        if len(predicted) == 0:
+            predicted = "_"
+
+        # Compare the ground-truth classification string and the predicted classification string
+        # Count only the complete match as the match.  Do not count the partial match.
+        if actual == predicted:
+            correct_count = correct_count + 1
+
+    print("Total count: %d" % (total_count))
+    print("Correct count (complete match only): %d" % (correct_count))
+    print("Accuracy: %f percent" % (correct_count * 100 / total_count))
+
+
+def main():
+    cnn_predict()
+
+
+if __name__ == "__main__":
+    main()

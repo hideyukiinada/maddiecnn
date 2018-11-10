@@ -20,6 +20,7 @@ For each dog, if I can say with confidence that a dog is in the photo even if a 
 
 ## Image file name convention 
 Files are named using the following convention:
+
 <Name prefixes>_<5 digit zero-padded number>.jpg
 
 If one or more dogs are in the photo, each file is marked with one or more of the following prefixes: 

@@ -6,6 +6,8 @@ Identify my 4 dogs using convolutional neural network (CNN) from 3000+ photos us
 # Network architecture
 Network is defined using Keras' Sequential model.  It uses multiple conv layers as well as dense layers toward the end.  Please see cnn.py for details.
 
+If you run tensorboard, you can also view the architecture during the training time.
+
 # Dataset
 Dataset consists of 3679 images.  3303 images contain one or more of the 4 dogs below.  The remaining 376 images do not contain any image of dogs. 
 

@@ -1,16 +1,15 @@
 # Maddie CNN
 
-## Current status of this project (Nov 9, 2018)
-Coding is complete and the latest version of the code is available in this repo.  Accuracy against the test set as measured using maddiecnn_predict script is high.  I will go through the dataset one more time before publishing the dataset and also run one more round of training and prediction before updating this page with the final accuracy information. 
----
-## Goals
+# Goals
 Identify my 4 dogs using convolutional neural network (CNN) from 3000+ photos using Keras-based convolutional neural network.
 
-## Network architecture
+# Network architecture
 Network is defined using Keras' Sequential model.  It uses multiple conv layers as well as dense layers toward the end.  Please see cnn.py for details.
 
-## Dataset
-Dataset consists of 3319 images.  3253 images contain one or more of the 4 dogs below.  The remaining 66 images do not contain any image of dogs. 
+If you run tensorboard, you can also view the architecture during the training time.
+
+# Dataset
+Dataset consists of 3679 images.  3303 images contain one or more of the 4 dogs below.  The remaining 376 images do not contain any image of dogs. 
 
 |  Name | Sample photo from the dataset  |
 |---|---|
@@ -18,6 +17,12 @@ Dataset consists of 3319 images.  3253 images contain one or more of the 4 dogs 
 | Maddie | ![Image of Maddie](assets/images/m_01409.jpg_256x256.jpg) |
 | Olivia | ![Image of Olivia](assets/images/o_01106.jpg_256x256.jpg) |
 | Pink | ![Image of Pink](assets/images/p_01216.jpg_256x256.jpg) |
+
+## Downloading the dataset
+Before you download or use the dataset, please carefully read the readme document in the below repository to make sure that your intended use of data complies with the terms specified.  **The dataset is NOT released under the MIT license.**
+
+The dataset is available for those who will be using the data in a way that is compliant with the terms:
+https://github.com/hideyukiinada/maddiecnn_dataset
 
 ## Size and format of each image
 256 pixel by 256 pixel JPEG.
@@ -28,7 +33,7 @@ For each dog, if I can say with confidence that a dog is in the photo even if a 
 ## Image file name convention 
 Files are named using the following convention:
 
-<Name prefixes>_<5 digit zero-padded number>.jpg
+<Name prefixes>_<a string that contains 5 digit file ID>.jpg
 
 If one or more dogs are in the photo, each file is marked with one or more of the following prefixes: 
 
@@ -40,7 +45,8 @@ If one or more dogs are in the photo, each file is marked with one or more of th
 | p | Pink |
 
   
-If a photo does not contain any of the dogs above, the file name will be _<5 digit zero-padded number>.jpg.
+If a photo does not contain any of the dogs above, the file name will be _<a string that contains 5 digit file ID>.jpg
+.
 
 Upon data load, classes get converted to a following vector to store ground truth:
 
@@ -51,5 +57,24 @@ Upon data load, classes get converted to a following vector to store ground trut
 |2|0 or 1.0|
 |3|0 or 1.0|
 
+# Running the scripts
+## Requirements
+- Python virtualenv with Python 3.5.2 and above (it may work with Python 3.4 and above but I haven't verified).
+- Keras
+- TensorFlow
+- Python Pillow
+
 ## Training and Predicting
 To train the model, run maddiecnn.  To predict, run maddiecnn_predict.
+
+## Directory structure
+In addition to the script directory, the following three top directories are required:
+- dataset/256
+- log
+- weight
+
+They should be at the same level as the 'maddiecnn' directory which is created when you clone the repo.
+Weight is automatically saved in hdf5 format at the end of the training.  To run prediction, you need this weight file.
+
+## Configuring parameters
+All configurable parameters are specified in config.json.

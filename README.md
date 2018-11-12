@@ -85,8 +85,8 @@ In addition to the project directory where script and helper code are located, t
 
 | Directory | Note |
 |---|---|
-| dataset/256 | Images for training and validation set. |
-| dataset/256.test | Images for test set.  You need to place some files that are not in the training set in this directory so that maddiecnn_predict can predict against data that is not in the training set. |
+| dataset/256 | Images for training and validation set. I put 3066 files in this directory. |
+| dataset/256.test | Images for test set.  You need to place some files that are not in the training set in this directory so that maddiecnn_predict can predict against data that is not in the training set. I put 613 files from the dataset in this directory. |
 | log | Store log for TensorBoard to visualize |
 | weight | Store weight.  Weight file is automatically saved in hdf5 format at the end of the training. To run prediction, you need this weight file.|
 

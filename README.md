@@ -55,7 +55,7 @@ Upon data load, classes get converted to a following vector to store ground trut
 |2|0 or 1.0|
 |3|0 or 1.0|
 
-## Run the scripts
+## Running the scripts
 ### Requirements
 - Python virtualenv with Python 3.5.2 and above (it may work with Python 3.4 and above but I haven't verified).
 - Keras

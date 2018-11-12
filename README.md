@@ -57,3 +57,9 @@ Upon data load, classes get converted to a following vector to store ground trut
 
 ## Training and Predicting
 To train the model, run maddiecnn.  To predict, run maddiecnn_predict.
+
+## Requirements to run the scripts
+- Python virtualenv with Python 3.5.2 and above (it may work with Python 3.4 and above but I haven't verified).
+- Keras
+- TensorFlow
+- Python Pillow

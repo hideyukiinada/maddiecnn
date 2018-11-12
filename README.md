@@ -72,3 +72,5 @@ In addition to the script directory, the following three top directories are req
 - dataset
 - log
 - weight
+
+They should be at the same level as the 'maddiecnn' directory which is created when you clone the repo.

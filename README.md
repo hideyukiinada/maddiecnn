@@ -67,3 +67,8 @@ Upon data load, classes get converted to a following vector to store ground trut
 ## Training and Predicting
 To train the model, run maddiecnn.  To predict, run maddiecnn_predict.
 
+## Directory structure
+In addition to the script directory, the following three top directories are required:
+- dataset
+- log
+- weight

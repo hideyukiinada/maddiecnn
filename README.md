@@ -74,6 +74,7 @@ In addition to the script directory, the following three top directories are req
 - weight
 
 They should be at the same level as the 'maddiecnn' directory which is created when you clone the repo.
+Weight is automatically saved in hdf5 format at the end of the training.  To run prediction, you need this weight file.
 
 ## Configuring parameters
 All configurable parameters are specified in config.json.

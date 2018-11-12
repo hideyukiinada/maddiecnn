@@ -57,6 +57,14 @@ Upon data load, classes get converted to a following vector to store ground trut
 |2|0 or 1.0|
 |3|0 or 1.0|
 
+## Breakdown of dataset
+| Type | Count | Note |
+|---|---|---|
+| Training set | 3066 | Used to train the model |
+| Validation set | 92 | Used during training to validate |
+| Test set | 613 | Used during testing to test against data that was not in training set |
+
+
 # Running the scripts
 ## Requirements
 - Python virtualenv with Python 3.5.2 and above (it may work with Python 3.4 and above but I haven't verified).

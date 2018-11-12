@@ -69,8 +69,11 @@ To train the model, run maddiecnn.  To predict, run maddiecnn_predict.
 
 ## Directory structure
 In addition to the script directory, the following three top directories are required:
-- dataset
+- dataset/256
 - log
 - weight
 
 They should be at the same level as the 'maddiecnn' directory which is created when you clone the repo.
+
+## Configuring parameters
+All configurations are specified in config.json.

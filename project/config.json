@@ -10,6 +10,7 @@
   "number_of_epochs":{"value":400, "comment":"Number of epochs for training"},
 
   "dataset_directory":{"value":"../../dataset/256", "comment":"Directory where images are located"},
+  "test_set_directory":{"value":"../../dataset/256.test", "comment":"Directory where test images are located"},
   "weight_file":{"value":"../../weight/maddiecnn.h5", "comment": "Weight file in HDF5 format"},
   "tensorboard_log_directory":{"value":"../../log", "comment": "Directory from which TensorBoard reads training stats to visualize"}
 }

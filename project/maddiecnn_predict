@@ -12,7 +12,7 @@ import logging
 from pathlib import Path
 
 from project.config import load_config
-from project.dataload import load_image_data
+from project.dataload import load_test_set
 from project.cnn import cnn
 from project.maddiecnncommon import DogClassIndex
 from project.maddiecnncommon import DogClassMarker
@@ -25,7 +25,7 @@ config = load_config()
 def cnn_predict():
     """Predict the class or classes of dogs contain in the dataset using the weight file created in the training session."""
 
-    x_train, y_train, x_test, y_test, file_name_training_list, file_name_test_list = load_image_data()
+    x_test, y_test, file_name_test_list = load_test_set()
 
     model = cnn()
 

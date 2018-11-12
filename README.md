@@ -31,7 +31,7 @@ For each dog, if I can say with confidence that a dog is in the photo even if a 
 ## Image file name convention 
 Files are named using the following convention:
 
-<Name prefixes>_<5 digit zero-padded number>.jpg
+<Name prefixes>_<a string that contains 5 digit file ID>.jpg
 
 If one or more dogs are in the photo, each file is marked with one or more of the following prefixes: 
 
@@ -43,7 +43,8 @@ If one or more dogs are in the photo, each file is marked with one or more of th
 | p | Pink |
 
   
-If a photo does not contain any of the dogs above, the file name will be _<5 digit zero-padded number>.jpg.
+If a photo does not contain any of the dogs above, the file name will be <a string that contains 5 digit file ID>.jpg
+.
 
 Upon data load, classes get converted to a following vector to store ground truth:
 

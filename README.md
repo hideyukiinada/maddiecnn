@@ -65,6 +65,10 @@ Upon data load, classes get converted to a following vector to store ground trut
 | Test set | 613 | Used during testing to test against data that was not in training set |  dataset/256.test |
 | Total | 3679 |   |
 
+# Accuracy of prediction
+Accuracy was measured by running maddiecnn_predict script against 613 images that are not used in training.
+Classes for 516 files completely matched (84.1%).  Partial match was considered incorrect.
+If you have any lower/higher accurary result in your environment, I'd love to hear from you.
 
 # Running the scripts
 ## Requirements
@@ -82,7 +86,7 @@ In addition to the project directory where script and helper code are located, t
 | Directory | Note |
 |---|---|
 | dataset/256 | Images for training and validation set. |
-| dataset/256.test | Images for test set.  You need to place some files that are not in the training set to this directory so that maddiecnn_predict can predict against data that is not in the training set. |
+| dataset/256.test | Images for test set.  You need to place some files that are not in the training set in this directory so that maddiecnn_predict can predict against data that is not in the training set. |
 | log | Store log for TensorBoard to visualize |
 | weight | Store weight.  Weight file is automatically saved in hdf5 format at the end of the training. To run prediction, you need this weight file.|
 

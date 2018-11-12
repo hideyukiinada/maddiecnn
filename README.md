@@ -1,12 +1,12 @@
 # Maddie CNN
 
-## Goals
+# Goals
 Identify my 4 dogs using convolutional neural network (CNN) from 3000+ photos using Keras-based convolutional neural network.
 
-## Network architecture
+# Network architecture
 Network is defined using Keras' Sequential model.  It uses multiple conv layers as well as dense layers toward the end.  Please see cnn.py for details.
 
-## Dataset
+# Dataset
 Dataset consists of 3679 images.  3303 images contain one or more of the 4 dogs below.  The remaining 376 images do not contain any image of dogs. 
 
 |  Name | Sample photo from the dataset  |
@@ -16,7 +16,7 @@ Dataset consists of 3679 images.  3303 images contain one or more of the 4 dogs 
 | Olivia | ![Image of Olivia](assets/images/o_01106.jpg_256x256.jpg) |
 | Pink | ![Image of Pink](assets/images/p_01216.jpg_256x256.jpg) |
 
-# Location of the dataset
+## Location of the dataset
 Before you download or use the dataset, please carefully read the readme document in the below repository to make sure that your intended use of data complies with the terms specified.  **The dataset is NOT released under the MIT license.**
 
 The dataset is available for those who will be using the data in a way that is compliant with the terms:
@@ -55,13 +55,13 @@ Upon data load, classes get converted to a following vector to store ground trut
 |2|0 or 1.0|
 |3|0 or 1.0|
 
-## Running the scripts
-### Requirements
+# Running the scripts
+## Requirements
 - Python virtualenv with Python 3.5.2 and above (it may work with Python 3.4 and above but I haven't verified).
 - Keras
 - TensorFlow
 - Python Pillow
 
-### Training and Predicting
+## Training and Predicting
 To train the model, run maddiecnn.  To predict, run maddiecnn_predict.
 

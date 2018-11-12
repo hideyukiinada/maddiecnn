@@ -58,11 +58,11 @@ Upon data load, classes get converted to a following vector to store ground trut
 |3|0 or 1.0|
 
 ## Breakdown of dataset
-| Type | Count | Note |
+| Type | Count | Note | Directory | 
 |---|---|---|
-| Training set | 2974 | Used to train the model |
-| Validation set | 92 | Used during training to validate |
-| Test set | 613 | Used during testing to test against data that was not in training set |
+| Training set | 2974 | Used to train the model | dataset/256 |
+| Validation set | 92 | Used during training to validate.  Files were randomly picked by the training script |  dataset/256 |
+| Test set | 613 | Used during testing to test against data that was not in training set |  dataset/256.test |
 | Total | 3679 |   |
 
 

@@ -57,6 +57,11 @@ Upon data load, classes get converted to a following vector to store ground trut
 |2|0 or 1.0|
 |3|0 or 1.0|
 
+# Accuracy
+Accuracy was measured against the test dataset that consists of 736 images by using maddiecnn_predict script.
+It only counts an image as correct only when the prediction completely matched for all classes for the image.
+Correct count was 715 (97.1 percent) against the weight trained with 400 epochs.  Please contact me if you observe accuracy significantly lower than this in your environment.
+
 # Running the scripts
 ## Requirements
 - Python virtualenv with Python 3.5.2 and above (it may work with Python 3.4 and above but I haven't verified).

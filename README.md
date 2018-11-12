@@ -77,13 +77,16 @@ Upon data load, classes get converted to a following vector to store ground trut
 To train the model, run maddiecnn.  To predict, run maddiecnn_predict.
 
 ## Directory structure
-In addition to the script directory, the following three top directories are required:
-- dataset/256
-- log
-- weight
+In addition to the project directory where script and helper code are located, the following directories are required:
 
-They should be at the same level as the 'maddiecnn' directory which is created when you clone the repo.
-Weight is automatically saved in hdf5 format at the end of the training.  To run prediction, you need this weight file.
+| Directory | Note |
+|---|---|
+| dataset/256 | Images for training and validation set. |
+| dataset/256.test | Images for test set.  You need to place some files that are not in the training set to this directory so that maddiecnn_predict can predict against data that is not in the training set. |
+| log | Store log for TensorBoard to visualize |
+| weight | Store weight.  Weight file is automatically saved in hdf5 format at the end of the training. To run prediction, you need this weight file.|
+
+These directories should be at the same level as the 'maddiecnn' directory which is created when you clone the repo.
 
 ## Configuring parameters
 All configurable parameters are specified in config.json.

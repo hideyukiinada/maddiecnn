@@ -1,8 +1,5 @@
 # Maddie CNN
 
-## Current status of this project (Nov 9, 2018)
-Coding is complete and the latest version of the code is available in this repo.  Accuracy against the test set as measured using maddiecnn_predict script is high.  I will go through the dataset one more time before publishing the dataset and also run one more round of training and prediction before updating this page with the final accuracy information. 
----
 ## Goals
 Identify my 4 dogs using convolutional neural network (CNN) from 3000+ photos using Keras-based convolutional neural network.
 
@@ -10,7 +7,7 @@ Identify my 4 dogs using convolutional neural network (CNN) from 3000+ photos us
 Network is defined using Keras' Sequential model.  It uses multiple conv layers as well as dense layers toward the end.  Please see cnn.py for details.
 
 ## Dataset
-Dataset consists of 3319 images.  3253 images contain one or more of the 4 dogs below.  The remaining 66 images do not contain any image of dogs. 
+Dataset consists of 3679 images.  3303 images contain one or more of the 4 dogs below.  The remaining 376 images do not contain any image of dogs. 
 
 |  Name | Sample photo from the dataset  |
 |---|---|
@@ -18,6 +15,12 @@ Dataset consists of 3319 images.  3253 images contain one or more of the 4 dogs 
 | Maddie | ![Image of Maddie](assets/images/m_01409.jpg_256x256.jpg) |
 | Olivia | ![Image of Olivia](assets/images/o_01106.jpg_256x256.jpg) |
 | Pink | ![Image of Pink](assets/images/p_01216.jpg_256x256.jpg) |
+
+# Location of the dataset
+Before you download or use the dataset, please read the readme document in the below repository carefully to make sure that your intended use of data complies with the terms specified:
+
+The dataset is available for those who will be using the data in a way that is compliant with the terms:
+https://github.com/hideyukiinada/maddiecnn_dataset
 
 ## Size and format of each image
 256 pixel by 256 pixel JPEG.

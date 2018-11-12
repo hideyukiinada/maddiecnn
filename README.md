@@ -17,7 +17,7 @@ Dataset consists of 3679 images.  3303 images contain one or more of the 4 dogs 
 | Pink | ![Image of Pink](assets/images/p_01216.jpg_256x256.jpg) |
 
 # Location of the dataset
-Before you download or use the dataset, please carefully read the readme document in the below repository to make sure that your intended use of data complies with the terms specified.  <span style="color:red">The dataset is NOT released under the MIT license.</span>
+Before you download or use the dataset, please carefully read the readme document in the below repository to make sure that your intended use of data complies with the terms specified.  **The dataset is NOT released under the MIT license.**
 
 The dataset is available for those who will be using the data in a way that is compliant with the terms:
 https://github.com/hideyukiinada/maddiecnn_dataset

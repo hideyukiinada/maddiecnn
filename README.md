@@ -1,7 +1,7 @@
 # Maddie CNN
 
 # Goals
-Identify my 4 dogs using convolutional neural network (CNN) from 3000+ photos using Keras-based convolutional neural network.
+Identify my 4 dogs in 3000+ photos using Keras-based convolutional neural network.
 
 # Network architecture
 Network is defined using Keras' Sequential model.  It uses multiple conv layers as well as dense layers toward the end.  Please see cnn.py for details.
